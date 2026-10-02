@@ -1,0 +1,40 @@
+.map-wrapper { position:relative; height:calc(100svh - 88px); min-height:430px; background:#070b14; overflow:hidden; }
+.map-container { position:absolute; inset:0; }
+.top-hud { position:absolute; bottom:28px; left:24px; z-index:2; }
+.hud-card { background:white; padding:16px; border-radius:6px; box-shadow:0 4px 20px #0002; width:300px; }
+.hud-header { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:12px; }
+.hud-title { font-size:14px; font-weight:700; }
+.hud-badge { font-size:10px; color:var(--primary); white-space:nowrap; }
+.hud-actions { display:flex; flex-wrap:wrap; gap:10px; }
+.province-select { width:100%; min-height:40px; border:1px solid #c6d5dc; border-radius:4px; padding:8px; background:white; color:var(--ink); }
+.btn { display:flex; align-items:center; justify-content:space-between; gap:24px; border:2px solid #24558e; border-radius:999px; color:#2584da; background:white; font-size:14px; font-weight:700; padding:10px 20px; min-height:44px; }
+.province-info-box { position:fixed; top:110px; right:24px; width:320px; max-height:calc(100svh - 140px); overflow-y:auto; overscroll-behavior:contain; background:white; padding:20px; border-radius:6px; box-shadow:0 4px 20px #0002; border-top:4px solid var(--accent); }
+.province-info-header { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:18px; }
+.province-label { text-transform:uppercase; font:12px 'League Spartan',sans-serif; color:var(--primary); }
+.province-active-name { font:600 24px Montserrat,sans-serif; display:block; overflow-wrap:anywhere; }
+.province-info-box p { margin-top:20px; color:var(--muted); font-size:14px; }
+.controls-dock { position:absolute; top:20px; left:24px; display:flex; align-items:center; gap:18px; padding:8px 12px; background:white; border-radius:5px; box-shadow:0 4px 20px #0002; }
+.controls-dock label { display:flex; align-items:center; gap:6px; font-size:12px; } input { accent-color:var(--primary); }
+.loading-overlay { position:absolute; inset:0; z-index:5; display:flex; align-items:center; justify-content:center; gap:15px; background:#070b14df; pointer-events:none; }
+.spinner { width:20px; height:20px; border:2px solid var(--light); border-top-color:var(--yellow); border-radius:50%; animation:spin 1s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }
+.map-error { position:absolute; z-index:6; top:80px; left:24px; max-width:calc(100% - 48px); width:380px; background:white; padding:20px; border-left:4px solid var(--yellow); font-size:14px; }
+.map-error button { margin-top:12px; padding:12px 24px; background:#174b87; color:white; border:2px solid #174b87; border-radius:999px; font-weight:700; min-height:48px; }
+@media(max-width:700px) { .map-wrapper { height:calc(100svh - 72px); } .top-hud { left:12px; bottom:30px; } .hud-card { width:250px; padding:12px; } .hud-title { font-size:12px; } .controls-dock { top:12px; left:12px; gap:12px; } .province-info-box { position:absolute; left:0; right:auto; top:auto; bottom:100%; margin-bottom:10px; width:250px; padding:14px; } .province-info-header { margin-bottom:8px; } .province-active-name { font-size:19px; } .province-info-box p { margin-top:10px; } }
+.province-climate { font-size:13px; }
+.province-info-box .climate-period { font-size:11px; margin-top:12px; }
+.climate-date { display:grid; gap:8px; font-weight:700; margin-top:18px; }
+.climate-date input,.climate-thresholds input { width:100%; padding:8px; border:1px solid #c6d5dc; border-radius:6px; background:white; color:var(--ink); }
+.province-info-box .climate-explanation,.province-info-box .climate-disclaimer { font-size:12px; line-height:1.6; margin-top:12px; }
+.climate-thresholds { margin-top:16px; border-block:1px solid #e4eaed; padding:12px 0; }
+.climate-thresholds summary { cursor:pointer; color:var(--primary); font-weight:700; }
+.climate-thresholds label { display:grid; grid-template-columns:1fr 85px; align-items:center; gap:10px; margin-top:10px; }
+.climate-thresholds p { font-size:12px; line-height:1.5; }
+.climate-limit-help { grid-column:1 / -1; color:var(--muted); font-size:12px; line-height:1.5; }
+.climate-metrics>div { padding:14px 0; border-bottom:1px solid #e4eaed; }
+.climate-metrics dt { font-weight:700; }
+.climate-metrics dd { display:grid; gap:5px; margin-top:8px; }
+.climate-metrics strong { font-size:24px; color:var(--primary); }
+.climate-metrics dd span { font-size:12px; color:var(--muted); }
+.province-climate>.source-link { display:inline-block; margin-top:14px; }
+@media(max-width:700px) { .province-info-box { max-height:calc(100svh - 270px); } }

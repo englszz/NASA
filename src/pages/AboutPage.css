@@ -1,0 +1,425 @@
+/* ==========================================================================
+   AboutPage.css - Estilos para la página informativa de Skyra
+   ========================================================================== */
+
+/* Contenedor principal de la página */
+.about-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-bg, #070b14);
+  color: var(--color-text, #f0f4f8);
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Sección 1: Hero de la Página
+   ========================================================================== */
+.about-hero {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1.5rem 3rem;
+  background: linear-gradient(180deg, var(--color-primary, #005187) 0%, var(--color-bg, #070b14) 100%);
+  border-bottom: 1px solid rgba(132, 182, 244, 0.1);
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(132, 182, 244, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.about-hero__container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.about-hero__badge {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-tech, 'League Spartan', sans-serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-highlight, #F5DF4D);
+  background: rgba(245, 223, 77, 0.1);
+  border: 1px solid rgba(245, 223, 77, 0.25);
+  border-radius: 9999px;
+  backdrop-filter: blur(8px);
+}
+
+.about-hero__title {
+  font-family: var(--font-heading, 'Montserrat', sans-serif);
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 0 4px 20px rgba(0, 81, 135, 0.5);
+}
+
+.about-hero__subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: var(--color-light, #C4DAFA);
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   Estructura general de secciones
+   ========================================================================== */
+.about-page__main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 5rem;
+}
+
+.about-section {
+  padding: 4rem 0;
+  border-bottom: 1px solid rgba(132, 182, 244, 0.08);
+}
+
+.about-section:last-of-type {
+  border-bottom: none;
+}
+
+.about-section__header {
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.about-section__title {
+  font-family: var(--font-heading, 'Montserrat', sans-serif);
+  font-size: clamp(1.75rem, 3.5vw, 2.35rem);
+  font-weight: 700;
+  color: var(--color-text, #f0f4f8);
+  position: relative;
+  display: inline-block;
+}
+
+.about-section__title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background-color: var(--color-accent, #84B6F4);
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   Sección 2: Misión
+   ========================================================================== */
+.about-mission__layout {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.about-mission__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.about-mission__paragraph {
+  font-size: 1.1rem;
+  color: var(--color-text-muted, #94a3b8);
+  line-height: 1.75;
+}
+
+.about-mission__paragraph:first-of-type {
+  color: var(--color-text, #f0f4f8);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Cuadro visual de marcador de posición (Placeholder) */
+.about-placeholder {
+  border: 2px dashed rgba(132, 182, 244, 0.3);
+  border-radius: 16px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--color-text-muted, #94a3b8);
+  background: rgba(10, 22, 40, 0.4);
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.about-placeholder:hover {
+  border-color: rgba(132, 182, 244, 0.55);
+  background: rgba(10, 22, 40, 0.6);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.about-placeholder__icon {
+  color: var(--color-accent, #84B6F4);
+  opacity: 0.8;
+}
+
+.about-placeholder__text {
+  font-family: var(--font-tech, 'League Spartan', sans-serif);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
+   Sección 3: NASA Space Apps Challenge
+   ========================================================================== */
+.about-nasa {
+  text-align: center;
+}
+
+.about-nasa__container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.about-nasa__badge-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.about-nasa__badge {
+  font-family: var(--font-tech, 'League Spartan', sans-serif);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-accent, #84B6F4);
+  background: rgba(132, 182, 244, 0.1);
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  border: 1px solid rgba(132, 182, 244, 0.2);
+}
+
+.about-nasa__title::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.about-nasa__description {
+  margin-top: 1.5rem;
+  font-size: 1.15rem;
+  color: var(--color-text-muted, #94a3b8);
+  line-height: 1.8;
+}
+
+/* Tarjeta destacada de equipo */
+.about-nasa__highlight {
+  margin-top: 2.5rem;
+  background: rgba(0, 81, 135, 0.2);
+  border-left: 4px solid var(--color-highlight, #F5DF4D);
+  border-radius: 0 14px 14px 0;
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: left;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  border-top: 1px solid rgba(132, 182, 244, 0.08);
+  border-right: 1px solid rgba(132, 182, 244, 0.08);
+  border-bottom: 1px solid rgba(132, 182, 244, 0.08);
+}
+
+.about-nasa__highlight-icon {
+  flex-shrink: 0;
+  color: var(--color-highlight, #F5DF4D);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-nasa__highlight-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-text, #f0f4f8);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Sección 4: Tecnologías Utilizadas
+   ========================================================================== */
+.about-tech__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.about-tech__card {
+  background: rgba(10, 22, 40, 0.6);
+  border: 1px solid rgba(132, 182, 244, 0.15);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  backdrop-filter: blur(6px);
+}
+
+.about-tech__card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-accent, #84B6F4);
+  box-shadow: 0 10px 25px rgba(0, 81, 135, 0.25);
+  background: rgba(10, 22, 40, 0.85);
+}
+
+.about-tech__icon {
+  font-size: 2.25rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+}
+
+.about-tech__name {
+  font-family: var(--font-heading, 'Montserrat', sans-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text, #f0f4f8);
+  margin-bottom: 0.5rem;
+}
+
+.about-tech__label {
+  font-size: 0.9rem;
+  color: var(--color-text-muted, #94a3b8);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Sección 5: Llamado a la Acción (CTA)
+   ========================================================================== */
+.about-cta {
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+.about-cta__content {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.about-cta__title {
+  font-family: var(--font-heading, 'Montserrat', sans-serif);
+  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-text, #f0f4f8);
+  letter-spacing: -0.01em;
+}
+
+.about-cta__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2.25rem;
+  background-color: var(--color-primary, #005187);
+  color: #ffffff;
+  font-family: var(--font-heading, 'Montserrat', sans-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 12px;
+  border: 1px solid rgba(132, 182, 244, 0.4);
+  box-shadow: 0 4px 18px rgba(0, 81, 135, 0.4), 0 0 12px rgba(132, 182, 244, 0.2);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.about-cta__button:hover {
+  background-color: var(--color-secondary, #4D82BE);
+  border-color: var(--color-light, #C4DAFA);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 81, 135, 0.6), 0 0 18px rgba(132, 182, 244, 0.4);
+  color: #ffffff;
+}
+
+.about-cta__button svg {
+  transition: transform 0.2s ease;
+}
+
+.about-cta__button:hover svg {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Ajustes Responsivos (Media Queries)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .about-mission__layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-mission__visual {
+    order: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-hero {
+    min-height: 40vh;
+    padding: 3rem 1rem 2.5rem;
+  }
+
+  .about-page__main {
+    padding: 1.5rem 1rem 3.5rem;
+  }
+
+  .about-section {
+    padding: 3rem 0;
+  }
+
+  .about-nasa__highlight {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .about-tech__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-cta {
+    padding: 3rem 1rem;
+  }
+
+  .about-cta__button {
+    width: 100%;
+  }
+}
